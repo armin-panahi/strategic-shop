@@ -26,7 +26,7 @@ const plpRoute = createRoute({ getParentRoute: () => rootRoute, path: '/plp/$car
 const productRoute = createRoute({ getParentRoute: () => rootRoute, path: '/product/$productId', component: ProductPage });
 const checkoutRoute = createRoute({ getParentRoute: () => rootRoute, path: '/checkout', component: CheckoutPage });
 const routeTree = rootRoute.addChildren([homeRoute, plpRoute, productRoute, checkoutRoute]);
-const router = createRouter({ routeTree, history: createHashHistory() });
+const router = createRouter({ routeTree, history: createHashHistory(123) });
 
 declare module '@tanstack/react-router' {
   interface Register { router: typeof router }
